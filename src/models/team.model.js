@@ -6,6 +6,16 @@ export const TeamSchema = new Schema({
     required: true,
     unique: true,
   },
+  users: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Users",
+    },
+  ],
+  category: {
+    type: String,
+    required: true,
+  },
 });
 
 export const TeamModel = model("Team", TeamSchema);
